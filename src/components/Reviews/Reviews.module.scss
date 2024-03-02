@@ -1,0 +1,32 @@
+.reviews {
+  max-width: 992px;
+  margin: 64px auto;
+
+  .add_btn {
+    text-align: center;
+    margin-top: 24px;
+    button {
+      background: #007E85;
+      width: 312px;
+      color: #FFF;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      padding: 11px 0;
+    }
+  }
+
+  .cards {
+    margin-top: 114px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 28px;
+
+    @media (max-width: 1024px) {
+      justify-content: center;
+    }
+  }
+}

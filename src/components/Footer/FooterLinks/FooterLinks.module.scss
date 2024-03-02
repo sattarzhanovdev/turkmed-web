@@ -1,0 +1,25 @@
+.footer_links {
+  p {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  ul {
+    margin-top: 39px;
+
+    @media (max-width: 768px) {
+      margin-top: 24px;
+    }
+
+    li {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px;
+      margin-bottom: 7px;
+      cursor: pointer;
+    }
+  }
+}

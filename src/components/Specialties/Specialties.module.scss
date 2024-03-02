@@ -1,0 +1,134 @@
+.specialties {
+  max-width: 992px;
+  margin: 0 auto;
+
+  .spec_img {
+    margin-bottom: 64px;
+
+    img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      @media (max-width: 430px) {
+        height: 150px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .our_spec {
+    .spec_title {
+      text-align: center;
+
+      p {
+        color: var(--secondary, #159EEC);
+        font-family: 'Work Sans', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 2.88px;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        color: #007E85;
+        font-family: 'Yeseva One';
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+
+    .all_spec {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 64px;
+
+      @media (max-width: 990px) {
+        justify-content: center;
+      }
+
+      @media (max-width: 430px) {
+        gap: 8px;
+      }
+
+      .spec_card {
+        width: 248px;
+        height: 172px;
+        border: 0.15px solid rgba(0, 0, 0, 0.19);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: .5s;
+
+        @media (max-width: 430px) {
+          width: 150px;
+          height: 105px;
+        }
+
+        p {
+          color: var(--black, #212124);
+          text-align: center;
+          font-family: 'Work Sans', sans-serif;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+
+          @media (max-width: 430px) {
+            font-size: 14px;
+            width: 95px;
+            word-wrap: break-word;
+          }
+        }
+
+        svg {
+          transition: .5s;
+        }
+
+        &:hover {
+          border-radius: 5px;
+          background: #007E85;
+
+          p {
+            color: var(--accent, #BFD2F8);
+          }
+
+          svg {
+            path {
+              fill: #BFD2F8;
+            }
+          }
+        }
+      }
+    }
+
+    .more {
+      margin-top: 32px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      p {
+        color: var(--secondary, #159EEC);
+        font-family: Work Sans;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+        cursor: pointer;
+      }
+
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+}

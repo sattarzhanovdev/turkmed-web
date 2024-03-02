@@ -1,0 +1,15 @@
+.licenses{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  max-width: 991px;
+  margin: 0 auto;
+  div{
+    max-width: 482px;
+    img{
+      width: 100%;
+      height: 100%;
+
+    }
+  }
+}

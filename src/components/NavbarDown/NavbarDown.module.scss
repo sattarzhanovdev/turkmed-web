@@ -1,0 +1,160 @@
+
+.nav_relative{
+  position: relative;
+}
+
+
+.navbar {
+  background-color: #007E85;
+
+  width: 100%;
+
+
+  z-index: 200;
+  @media (max-width: 500px) {
+    position: absolute;
+    top: 0;
+    z-index: 105;
+  }
+
+  .container {
+    max-width: 992px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+
+    @media (max-width: 1024px) {
+      width: 90%;
+    }
+
+    @media (max-width: 500px) {
+      padding: 19px 0;
+      height: unset;
+    }
+
+    ul {
+      display: flex;
+      gap: 20px;
+
+      @media (max-width: 500px) {
+        display: none;
+      }
+
+      li {
+        color: var(--white, #FCFEFE);
+        font-family: 'Work Sans', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+
+        svg {
+          path {
+            stroke: inherit;
+          }
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+
+        .active {
+          color: var(--accent, #BFD2F8);
+        }
+      }
+    }
+
+    .logo {
+      display: none;
+
+      @media (max-width: 500px) {
+        display: block;
+      }
+    }
+
+    .right {
+      @media (max-width: 500px) {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      position: relative;
+
+      .search {
+        cursor: pointer;
+        display: flex;
+        gap: 20px;
+
+        @media (max-width: 430px) {
+          gap: 10px;
+        }
+
+        input {
+          width: 245px;
+          height: 50px;
+          color: var(--white, #FCFEFE);
+          font-family: 'Work Sans', sans-serif;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 22px;
+          background: #007E85;
+          padding: 16px 0 12px 20px;
+          border: 1px solid #BFD2F8;
+
+          @media (max-width: 768px) {
+            width: 100%;
+          }
+
+          @media (max-width: 430px) {
+            width: 200px;
+          }
+
+          @media (max-width: 375px) {
+            width: 180px;
+          }
+
+          &::placeholder {
+            font-family: inherit;
+            color: inherit;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+          }
+        }
+        .search_icon{
+          position: absolute;
+          right: -30px;
+          top: 50%;
+          transform: translateY(-50%);
+          @media (max-width: 500px) {
+            right: 60px;
+          }
+        }
+      }
+
+      .burger {
+        display: none;
+
+        @media (max-width: 500px) {
+          display: block;
+        }
+      }
+    }
+
+  }
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+}

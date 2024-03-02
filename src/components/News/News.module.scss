@@ -1,0 +1,22 @@
+.news {
+  max-width: 992px;
+  margin: 64px auto;
+
+  @media (max-width: 990px) {
+    width: 90%;
+  }
+
+  .news_block {
+    margin-top: 64px;
+
+    .news_card {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @media (max-width: 990px) {
+        justify-content: center;
+      }
+    }
+  }
+}

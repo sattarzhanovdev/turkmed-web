@@ -1,0 +1,29 @@
+.doctors {
+  background: url('../../../src/images/back-for-doctors.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+  padding: 5px 0;
+  @media (max-width: 500px) {
+    background: grey;
+  }
+  
+  .container {
+    max-width: 992px;
+    margin: 32px auto;
+
+    .doctors {
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 64px;
+        gap: 20px;
+
+        @media (max-width: 1024px) {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
