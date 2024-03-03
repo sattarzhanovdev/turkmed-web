@@ -1,11 +1,11 @@
 import axios from "axios";
 
 export const API = {
-  getDoctors: () => axios.get('/api/doctors/'),
-  postAppointment: (data) => axios.post('/api/appointment/', data),
-  getNews: () => axios.get('/api/news/news/'),
-  postReview: (data) => axios.post('/api/reviews/', data),
-  getGallery: () => axios.get('/api/news/gallery/'),
-  getLicenses: () => axios.get('/api/news/licenses'),
-  getReviews: () => axios.get('/api/reviews/'),
+  getDoctors: () => axios.get('https://turkmedgem.pythonanywhere.com/doctors/'),
+  postAppointment: (data) => axios.post('https://turkmedgem.pythonanywhere.com/appointment/', data),
+  getNews: () => axios.get('https://turkmedgem.pythonanywhere.com/news/news/'),
+  postReview: (data) => axios.post('https://turkmedgem.pythonanywhere.com/reviews/', data),
+  getGallery: () => axios.get('https://turkmedgem.pythonanywhere.com/news/gallery/'),
+  getLicenses: () => axios.get('https://turkmedgem.pythonanywhere.com/news/licenses'),
+  getReviews: () => axios.get('https://turkmedgem.pythonanywhere.com/reviews/'),
 }
