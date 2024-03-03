@@ -6,6 +6,6 @@ export const API = {
   getNews: () => axios.get('https://turkmedgem.pythonanywhere.com/news/news/'),
   postReview: (data) => axios.post('https://turkmedgem.pythonanywhere.com/reviews/', data),
   getGallery: () => axios.get('https://turkmedgem.pythonanywhere.com/news/gallery/'),
-  getLicenses: () => axios.get('https://turkmedgem.pythonanywhere.com/news/licenses'),
+  getLicenses: () => axios.get('https://turkmedgem.pythonanywhere.com/news/licenses/'),
   getReviews: () => axios.get('https://turkmedgem.pythonanywhere.com/reviews/'),
 }
