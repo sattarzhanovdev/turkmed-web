@@ -1,13 +1,19 @@
 import React from 'react'
 import {GetLicenses, ScrollTop} from '../../helpers'
 import c from './Licenses.module.scss'
+import license from '../../images/ЛИЦЕНЗИЯ.png'
 
 
 const Licenses = () => {
-  const {licenses} = GetLicenses()
+  // const {licenses} = GetLicenses()
   React.useEffect(() => {
     ScrollTop()
   }, [])
+  const licenses = [
+    {
+      image: license
+    }
+  ]
   return (
     <div className={c.licenses}>
       {

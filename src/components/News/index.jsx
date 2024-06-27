@@ -5,9 +5,10 @@ import Title from '../Title'
 import { GetNews } from '../../helpers'
 
 const News = () => {
-  const {news} = GetNews()
-  console.log(news);
+  // const {news} = GetNews()
+  // console.log(news);
 
+  const news = []
 
   return (
     <div className={c.news}>
@@ -15,6 +16,7 @@ const News = () => {
       <div className={c.news_block}>
         <div className={c.news_card}>
           {
+            news?.length !== 0 ?
             news?.map((item, i) => (
               <NewsCard 
                 key={i}
@@ -24,7 +26,8 @@ const News = () => {
                 image={item.image}
                 title={item.title}
               />
-            ))
+            )) :
+            <h4>Нету новостей!</h4>
           }
         </div>
       </div>

@@ -5,10 +5,12 @@ import Title from '../../components/Title'
 import { Components } from '../../components'
 
 const NewsPage = () => {
-  const {news} = GetNews()
+  // const {news} = GetNews()
   React.useEffect(() => {
     ScrollTop()
   }, [])
+
+  const news = []
 
   return (
     <div className={c.news}>

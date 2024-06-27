@@ -11,7 +11,12 @@ const Reviews = () => {
   const [reviews, setReviews] = React.useState(null)
   
   React.useEffect(() => {
-    API.getReviews().then(res => setReviews(res.data))
+    // API.getReviews().then(res => setReviews(res.data))
+    const reviews = [
+
+    ]
+
+    setReviews(reviews)
   }, [modalWindow])
 
   if(!reviews) return <h2>wait...</h2>
