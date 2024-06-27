@@ -4,7 +4,7 @@ import arrow from '../../images/arrow-down.svg'
 import { GetDoctors, ScrollTop } from '../../helpers'
 import { useNavigate, useParams } from 'react-router-dom'
 import { timeList } from '../../utils'
-import { API } from '../../api'
+import { API, toSheets } from '../../api'
 import { IMask, IMaskInput } from 'react-imask';
 
 const Appointment = () => {
@@ -17,21 +17,31 @@ const Appointment = () => {
   const [date, setDate] = React.useState('')
   const [time, setTime] = React.useState('')
   const navigate = useNavigate()
-
+  
   const [value, setValue] = React.useState({
-    full_name: '',
-    sex: '',
-    time: '',
-    phone_number: '',
-    doctor: Number(id),
+    "Имя": '',
+    "Пол": '',
+    "Время": '',
+    "Дата": '',
+    "Номер телефона": '',
+    "Доктор": doctors.find(item => item.id === Number(id))?.full_name,
   })
+  // const [value, setValue] = React.useState({
+  //   full_name: '',
+  //   sex: '',
+  //   time: '',
+  //   phone_number: '',
+  //   doctor: Number(id),
+  // })
+
 
   const handleAppointment = () => {
-    API.postAppointment(value).then(r => r.data && navigate('/')).catch(e => e.response.data && setError(e.response.data))
+    // API.postAppointment(value).then(r => r.data && navigate('/')).catch(e => e.response.data && setError(e.response.data))
+    toSheets(value).then(res => res.data ? navigate('/') : '')
   }
 
   React.useEffect(() => {
-    setValue({...value, time: [date, time].join(' ')})
+    setValue({...value, "Время": time, "Дата": date})
   }, [date, time])
 
    React.useEffect(() => {
@@ -44,7 +54,8 @@ const Appointment = () => {
 
   const item = doctors?.find(value => value.id === Number(id))
 
-  const PhoneMask = "+{996} (000) 00-00-00";
+  // const PhoneMask = "+{996} (000) 00-00-00";
+  const PhoneMask = "0 (000) 00-00-00";
   const phoneMask = [
     {
       mask: PhoneMask,
@@ -75,17 +86,17 @@ const Appointment = () => {
                 <input 
                   type="text" 
                   placeholder='Имя' 
-                  onChange={(e) => setValue({...value, full_name: e.target.value})}
+                  onChange={(e) => setValue({...value, "Имя": e.target.value})}
                 />
                 <div className={c.gender} onClick={() => setGenderView(!genderView)}>
-                  <p>{value.sex.length > 0 ? value.sex : 'Пол'}</p>
+                  <p>{value['Пол'].length > 0 ? value['Пол'] : 'Пол'}</p>
                   <img src={arrow} alt=">" />
                 </div>
                 {
                   genderView ?
                   <div className={c.gender_select}>
                     <p onClick={() => {
-                      setValue({...value, sex: 'male'})
+                      setValue({...value, "Пол": 'male'})
                       setGenderView(false)
                     }}>
                       М
@@ -94,7 +105,7 @@ const Appointment = () => {
                       <path d="M0 1L464 1.00004" stroke="white" stroke-opacity="0.5" />
                     </svg>
                     <p onClick={() => {
-                      setValue({...value, sex: 'female'})
+                      setValue({...value, "Пол": 'female'})
                       setGenderView(false)
                     }}>
                       Ж
@@ -142,7 +153,7 @@ const Appointment = () => {
                 <IMaskInput  
                   mask={phoneMask} 
                   placeholder='Номер телефона' 
-                  onChange={(e) => setValue({...value, phone_number: e.target.value})}
+                  onChange={(e) => setValue({...value, "Номер телефона": e.target.value})}
                 />
                 <button onClick={handleAppointment}>Подтвердить</button>
               </div>

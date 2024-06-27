@@ -9,3 +9,5 @@ export const API = {
   getLicenses: () => axios.get('https://turkmedgem.pythonanywhere.com/news/licenses/'),
   getReviews: () => axios.get('https://turkmedgem.pythonanywhere.com/reviews/'),
 }
+
+export const toSheets = (data) => axios.post('https://sheetdb.io/api/v1/zhkq2e98adwne', data)
